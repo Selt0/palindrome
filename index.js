@@ -21,13 +21,25 @@ function Phrase(content) {
   this.content = content;
 
   //method toLowerCase()
-  this.processor = function(string) {
-    string.toLowerCase();
+  this.processor = function() {
+    return this.letters().toLowerCase();
   }
 
   //method to return processed content 
   this.processedContent = function() {
     return this.processor(this.content);
+  }
+
+  //method that returns only letters
+  this.letters = function() {
+    let theLetters = [];
+    for (let i = 0; i < this.content.length; i++) {
+      let character = this.content.charAt(i);
+      if (character.match(/[a-zA-Z]/)) {
+        theLetters.push(character);
+      }
+    }
+    return theLetters.join("");
   }
 
   //method to detect palindrome

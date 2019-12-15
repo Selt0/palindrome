@@ -1,7 +1,7 @@
 {
   "name": "selt0-palindrome",
   "version": "0.1.0",
-  "description": "learn-enough palindrome",
+  "description": "palindrome detector",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
