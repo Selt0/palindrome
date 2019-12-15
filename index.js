@@ -27,7 +27,8 @@ function Phrase(content) {
 
   //method that returns only letters
   this.letters = function() {
-    return (this.content.match(/[a-z]/gi) || []).join("");
+    const lettersRegEx = /[a-z]/gi;
+    return (this.content.match(lettersRegEx) || []).join("");
   }
 
   //method to detect palindrome
