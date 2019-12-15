@@ -20,25 +20,20 @@ Array.prototype.lastItem = function() {
 function Phrase(content) {
   this.content = content;
 
-  //method toLowerCase()
-  this.processor = function() {
-    return this.letters().toLowerCase();
-  }
-
-  //method to return processed content 
+  //method to return processed content for testing
   this.processedContent = function() {
-    return this.processor(this.content);
+    return this.letters().toLowerCase();
   }
 
   //method that returns only letters
   this.letters = function() {
     let theLetters = [];
-    for (let i = 0; i < this.content.length; i++) {
-      let character = this.content.charAt(i);
-      if (character.match(/[a-zA-Z]/)) {
+    const letterRegex = /[a-z]/i;
+    Array.from(this.content).forEach(function(character) {
+      if (character.match(letterRegex)) {
         theLetters.push(character);
       }
-    }
+    });
     return theLetters.join("");
   }
 
