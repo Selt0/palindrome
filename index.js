@@ -33,13 +33,18 @@ function Phrase(content) {
 
   //method to detect palindrome
   this.palindrome = function palindrome() {
-    return this.processedContent() === this.processedContent().reverse();
+    if (this.processedContent()) {
+      return this.processedContent() === this.processedContent().reverse();
+    } else {
+      return false;
+    }  
   }
 
   //method to make a phrase all-caps
   this.louder = function louder() {
     return this.content.toUpperCase();
   }
+
 }
 
 //Defines TranslatedPhrase object
